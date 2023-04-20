@@ -12,6 +12,14 @@ requirements:
 hints:
 - class: DockerRequirement
   dockerPull: quay.io/cri-iatlas/immune_subtype_clustering:1.0
+  volumes:
+  - hostPath: /var/run/docker.sock
+    containerPath: /var/run/docker.sock
+    readOnly: true
+  - hostPath: /tmp
+    containerPath: /tmp
+  - hostPath: \$PWD
+    containerPath: /input
 
 inputs:
 
